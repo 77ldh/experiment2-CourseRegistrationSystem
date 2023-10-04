@@ -103,7 +103,7 @@
         choose1.close();
 
     	 }
-### 运行截图
+### 系统运行结果
 ![1963fbb7781298921db91e467396df0](https://github.com/77ldh/experiment2-CourseRegistrationSystem/assets/145440886/9dd1b2f0-e1f8-4a41-a633-18f82e475e55)
 
 
