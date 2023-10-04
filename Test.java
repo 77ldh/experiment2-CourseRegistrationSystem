@@ -1,33 +1,33 @@
 package system;
 import java.util.Scanner; 
 public class Test {
-	//ä½“ç°å¯¹toString()çš„é‡å†™
+	//ÌåÏÖ¶ÔtoString()µÄÖØĞ´
 	public static String toString(Student stu) {
-		return "å½“å‰ç™»å½•ç³»ç»Ÿå­¦ç”Ÿä¸º:"+" \nå§“å: "+stu.name+" ç¼–å·: "+stu.number+" å¹´çº§: "+stu.grade+" ä¸“ä¸š: "+stu.major+" æ ¡åŒº: "+stu.campus+" å½“å‰é€‰æ‹©è¯¾ç¨‹: "+stu.coursed;
+		return "µ±Ç°µÇÂ¼ÏµÍ³Ñ§ÉúÎª:"+" \nĞÕÃû: "+stu.name+" ±àºÅ: "+stu.number+" Äê¼¶: "+stu.grade+" ×¨Òµ: "+stu.major+" Ğ£Çø: "+stu.campus+" µ±Ç°Ñ¡Ôñ¿Î³Ì: "+stu.coursed;
 				
 	}
 	static boolean flag1 = true;
-	static void loopMethod(Student stu) {    //é€€è¯¾ç³»ç»Ÿä¸­çš„å¾ªç¯æ–¹æ³•
+	static void loopMethod(Student stu) {    //ÍË¿ÎÏµÍ³ÖĞµÄÑ­»··½·¨
 		System.out.println(toString(stu));
-		System.out.println("é€€è¯¾è¯·è¾“å…¥1,é€€å‡ºé€‰è¯¾ç³»ç»Ÿè¾“å…¥0");		
+		System.out.println("ÍË¿ÎÇëÊäÈë1,ÍË³öÑ¡¿ÎÏµÍ³ÊäÈë0");		
 		Scanner choose2 = new Scanner(System.in);
 		if (choose2.hasNext()) {
 			String str2 = choose2.next(); 
 			switch(str2) {
 			case "0" :
 				{flag1 = false ;
-				System.out.println("å·²é€€å‡ºé€‰è¯¾ç³»ç»Ÿ.");}
+				System.out.println("ÒÑÍË³öÑ¡¿ÎÏµÍ³.");}
 				break;
 			case "1":
 			{
 					stu.dropCoursed();
-					System.out.println("é€€è¯¾æˆåŠŸ.");
-					System.out.println("å­¦ç”Ÿä¿¡æ¯: \nå§“å: "+stu.name+" ç¼–å·: "+stu.number+" å¹´çº§: "+stu.grade+" ä¸“ä¸š: "+stu.major+" æ ¡åŒº: "+stu.campus+" å½“å‰é€‰æ‹©è¯¾ç¨‹: "+stu.coursed);					
+					System.out.println("ÍË¿Î³É¹¦.");
+					System.out.println("Ñ§ÉúĞÅÏ¢: \nĞÕÃû: "+stu.name+" ±àºÅ: "+stu.number+" Äê¼¶: "+stu.grade+" ×¨Òµ: "+stu.major+" Ğ£Çø: "+stu.campus+" µ±Ç°Ñ¡Ôñ¿Î³Ì: "+stu.coursed);					
 					flag1=false;
 			}
 			break;
 			default :
-			{System.out.println("è¾“å…¥æœ‰è¯¯!");}
+			{System.out.println("ÊäÈëÓĞÎó!");}
 			break;
 			}
 		}
@@ -35,93 +35,93 @@ public class Test {
 		
 	}
 	 public static void main(String[] args) {
-	//æå‰å½•å…¥è¯¾ç¨‹ä»¥åŠæ•™å¸ˆå­¦ç”Ÿä¿¡æ¯
-	//æ•™å¸ˆ
-	Teacher teacher1 = new Teacher(001,"æ•™å¸ˆ1","æ¸…æºæ ¡åŒº",'A');
-	Teacher teacher2 = new Teacher(003,"æ•™å¸ˆ3","æ¸…æºæ ¡åŒº",'A');
-	Teacher teacher3 = new Teacher(051,"æ•™å¸ˆ5","åº·åº„æ ¡åŒº",'B');
-	Teacher teacher4 = new Teacher(022,"æ•™å¸ˆ0","åº·åº„æ ¡åŒº",'A');
-	//è¯¾ç¨‹ 
-	teacher1.setCourse("Javaåº”ç”¨å¼€å‘æŠ€æœ¯");
-	teacher2.setCourse("å¤§å­¦è‹±è¯­");    
-	teacher3.setCourse("ä¸­å›½å“²å­¦å²");   
-	teacher4.setCourse("é‡‘å·¥å®ä¹ ");
-	Courses course1 = new Courses(000,"Javaåº”ç”¨å¼€å‘æŠ€æœ¯","æ¸…æºæ ¡åŒº","å‘¨ä¸€ 9:40","æ•™101");
-	Courses course2 = new Courses(001,"å¤§å­¦è‹±è¯­","æ¸…æºæ ¡åŒº","å‘¨å›› 7:50","å›¾501");
-	Courses course3 = new Courses(002,"ä¸­å›½å“²å­¦å²","åº·åº„æ ¡åŒº","å‘¨å…­ 19:50","æ•™207");
-	Courses course4 = new Courses(003,"é‡‘å·¥å®ä¹ ","åº·åº„æ ¡åŒº","æ—¶é—´å¾…å®š","åœ°ç‚¹å¾…å®š");
-	//åœ¨å±å¹•ä¸Šè¾“å‡ºè¯¾è¡¨åŠä¿¡æ¯,å¹¶æç¤ºå½“å‰è¯¾ä½™é‡(è¯¾ä½™é‡ç”±éšæœºæ•°äº§ç”Ÿ),ä»¥åŠå‰©ä½™å¯é€‰äººæ•°
-	System.out.println("è¯¾ç¨‹åˆ—è¡¨:");
-	System.out.println("è¯¾ç¨‹ç¼–å·:"+course1.number+" è¯¾ä½™é‡:"+course1.reduce/*+" æ˜¯å¦å¯é€‰è¯¾:"+course1.choice*/+" è¯¾ç¨‹åç§°:"+course1.name+" æ•™å¸ˆåç§°:"+teacher1.name+" åœ°ç‚¹:"+course1.campus+course1.location+" è¯¾ç¨‹æ—¶é—´:"+course1.time);
-	System.out.println("è¯¾ç¨‹ç¼–å·:"+course2.number+" è¯¾ä½™é‡:"+course2.reduce/*+" æ˜¯å¦å¯é€‰è¯¾:"+course2.choice*/+" è¯¾ç¨‹åç§°:"+course2.name+" æ•™å¸ˆåç§°:"+teacher2.name+" åœ°ç‚¹:"+course2.campus+course2.location+" è¯¾ç¨‹æ—¶é—´:"+course2.time);
-	System.out.println("è¯¾ç¨‹ç¼–å·:"+course3.number+" è¯¾ä½™é‡:"+course3.reduce/*+" æ˜¯å¦å¯é€‰è¯¾:"+course3.choice*/+" è¯¾ç¨‹åç§°:"+course3.name+" æ•™å¸ˆåç§°:"+teacher3.name+" åœ°ç‚¹:"+course3.campus+course3.location+" è¯¾ç¨‹æ—¶é—´:"+course3.time);
-	System.out.println("è¯¾ç¨‹ç¼–å·:"+course4.number+" è¯¾ä½™é‡:"+course4.reduce/*+" æ˜¯å¦å¯é€‰è¯¾:"+course4.choice*/+" è¯¾ç¨‹åç§°:"+course4.name+" æ•™å¸ˆåç§°:"+teacher4.name+" åœ°ç‚¹:"+course4.campus+course4.location+" è¯¾ç¨‹æ—¶é—´:"+course4.time);
-	//å­¦ç”Ÿç™»å…¥,å¹¶é€‰æ‹©ä¸ºé€€è¯¾æˆ–è€…é€‰è¯¾
-	Student stu = new Student(2022310900,"å­¦ç”Ÿ1","æ¸…æºæ ¡åŒº",2,"æ•°æ®ç§‘å­¦ä¸å¤§æ•°æ®æŠ€æœ¯");     //å­¦ç”Ÿç™»å…¥
-	//å¼€å§‹é€€é€‰è¯¾éƒ¨åˆ†
+	//ÌáÇ°Â¼Èë¿Î³ÌÒÔ¼°½ÌÊ¦Ñ§ÉúĞÅÏ¢
+	//½ÌÊ¦
+	Teacher teacher1 = new Teacher(001,"½ÌÊ¦1","ÇåÔ´Ğ£Çø",'A');
+	Teacher teacher2 = new Teacher(003,"½ÌÊ¦3","ÇåÔ´Ğ£Çø",'A');
+	Teacher teacher3 = new Teacher(051,"½ÌÊ¦5","¿µ×¯Ğ£Çø",'B');
+	Teacher teacher4 = new Teacher(022,"½ÌÊ¦0","¿µ×¯Ğ£Çø",'A');
+	//¿Î³Ì 
+	teacher1.setCourse("JavaÓ¦ÓÃ¿ª·¢¼¼Êõ");
+	teacher2.setCourse("´óÑ§Ó¢Óï");    
+	teacher3.setCourse("ÖĞ¹úÕÜÑ§Ê·");   
+	teacher4.setCourse("½ğ¹¤ÊµÏ°");
+	Courses course1 = new Courses(000,"JavaÓ¦ÓÃ¿ª·¢¼¼Êõ","ÇåÔ´Ğ£Çø","ÖÜÒ» 9:40","½Ì101");
+	Courses course2 = new Courses(001,"´óÑ§Ó¢Óï","ÇåÔ´Ğ£Çø","ÖÜËÄ 7:50","Í¼501");
+	Courses course3 = new Courses(002,"ÖĞ¹úÕÜÑ§Ê·","¿µ×¯Ğ£Çø","ÖÜÁù 19:50","½Ì207");
+	Courses course4 = new Courses(003,"½ğ¹¤ÊµÏ°","¿µ×¯Ğ£Çø","Ê±¼ä´ı¶¨","µØµã´ı¶¨");
+	//ÔÚÆÁÄ»ÉÏÊä³ö¿Î±í¼°ĞÅÏ¢,²¢ÌáÊ¾µ±Ç°¿ÎÓàÁ¿(¿ÎÓàÁ¿ÓÉËæ»úÊı²úÉú),ÒÔ¼°Ê£Óà¿ÉÑ¡ÈËÊı
+	System.out.println("¿Î³ÌÁĞ±í:");
+	System.out.println("¿Î³Ì±àºÅ:"+course1.number+" ¿ÎÓàÁ¿:"+course1.reduce/*+" ÊÇ·ñ¿ÉÑ¡¿Î:"+course1.choice*/+" ¿Î³ÌÃû³Æ:"+course1.name+" ½ÌÊ¦Ãû³Æ:"+teacher1.name+" µØµã:"+course1.campus+course1.location+" ¿Î³ÌÊ±¼ä:"+course1.time);
+	System.out.println("¿Î³Ì±àºÅ:"+course2.number+" ¿ÎÓàÁ¿:"+course2.reduce/*+" ÊÇ·ñ¿ÉÑ¡¿Î:"+course2.choice*/+" ¿Î³ÌÃû³Æ:"+course2.name+" ½ÌÊ¦Ãû³Æ:"+teacher2.name+" µØµã:"+course2.campus+course2.location+" ¿Î³ÌÊ±¼ä:"+course2.time);
+	System.out.println("¿Î³Ì±àºÅ:"+course3.number+" ¿ÎÓàÁ¿:"+course3.reduce/*+" ÊÇ·ñ¿ÉÑ¡¿Î:"+course3.choice*/+" ¿Î³ÌÃû³Æ:"+course3.name+" ½ÌÊ¦Ãû³Æ:"+teacher3.name+" µØµã:"+course3.campus+course3.location+" ¿Î³ÌÊ±¼ä:"+course3.time);
+	System.out.println("¿Î³Ì±àºÅ:"+course4.number+" ¿ÎÓàÁ¿:"+course4.reduce/*+" ÊÇ·ñ¿ÉÑ¡¿Î:"+course4.choice*/+" ¿Î³ÌÃû³Æ:"+course4.name+" ½ÌÊ¦Ãû³Æ:"+teacher4.name+" µØµã:"+course4.campus+course4.location+" ¿Î³ÌÊ±¼ä:"+course4.time);
+	//Ñ§ÉúµÇÈë,²¢Ñ¡ÔñÎªÍË¿Î»òÕßÑ¡¿Î
+	Student stu = new Student(2022310900,"Ñ§Éú1","ÇåÔ´Ğ£Çø",2,"Êı¾İ¿ÆÑ§Óë´óÊı¾İ¼¼Êõ");     //Ñ§ÉúµÇÈë
+	//¿ªÊ¼ÍËÑ¡¿Î²¿·Ö
 	while (flag1) {
 	
 	System.out.println(toString(stu));
-	System.out.println("é€‰è¯¾è¯·è¾“å…¥1,é€€å‡ºé€‰è¯¾ç³»ç»Ÿè¾“å…¥0:");        // nextæ–¹å¼æ¥æ”¶å­—ç¬¦ä¸²,å¹¶åˆ¤æ–­æ˜¯å¦è¿˜æœ‰è¾“å…¥	
-	Scanner choose1 = new Scanner(System.in);      // ä»é”®ç›˜æ¥æ”¶æ•°æ®choose
-    if (choose1.hasNext()) {                       //choose1ä¸ºç¬¬ä¸€æ¬¡æ¥å—çš„é”®ç›˜è¾“å…¥
-    	String str1 = choose1.next();              //æŠŠç¬¬ä¸€æ¬¡é”®ç›˜è¾“å…¥ä¼ é€’ç»™str1
+	System.out.println("Ñ¡¿ÎÇëÊäÈë1,ÍË³öÑ¡¿ÎÏµÍ³ÊäÈë0:");        // next·½Ê½½ÓÊÕ×Ö·û´®,²¢ÅĞ¶ÏÊÇ·ñ»¹ÓĞÊäÈë	
+	Scanner choose1 = new Scanner(System.in);      // ´Ó¼üÅÌ½ÓÊÕÊı¾İchoose
+    if (choose1.hasNext()) {                       //choose1ÎªµÚÒ»´Î½ÓÊÜµÄ¼üÅÌÊäÈë
+    	String str1 = choose1.next();              //°ÑµÚÒ»´Î¼üÅÌÊäÈë´«µİ¸østr1
     	 switch(str1) {
     	 case "0" :
     	 {
-    		 System.out.println("å·²é€€å‡ºé€‰è¯¾ç³»ç»Ÿ.");
+    		 System.out.println("ÒÑÍË³öÑ¡¿ÎÏµÍ³.");
     		 flag1 = false;
     	 }
     	 break;
     	 case "1" :
     	 {
-    		 System.out.println("è¯·è¾“å…¥æƒ³è¦é€‰æ‹©çš„è¯¾ç¨‹çš„åºå·:");
-    		 Scanner scan = new Scanner(System.in);  //ç¬¬äºŒæ¬¡é”®ç›˜è¾“å…¥ä¸ºscan
+    		 System.out.println("ÇëÊäÈëÏëÒªÑ¡ÔñµÄ¿Î³ÌµÄĞòºÅ:");
+    		 Scanner scan = new Scanner(System.in);  //µÚ¶ş´Î¼üÅÌÊäÈëÎªscan
     		 if (scan.hasNext())
     		 {
-    			 String cbs = scan.next();               //ç¬¬äºŒæ¬¡é”®ç›˜è¾“å…¥ä¼ é€’ç»™cbs
-    			 switch(cbs)                             //cbsä¸ºç¬¬äºŒæ¬¡è¾“å…¥çš„é€‰è¯¾åºå·
+    			 String cbs = scan.next();               //µÚ¶ş´Î¼üÅÌÊäÈë´«µİ¸øcbs
+    			 switch(cbs)                             //cbsÎªµÚ¶ş´ÎÊäÈëµÄÑ¡¿ÎĞòºÅ
     			 {
     			 	case "0" :
-    			 		{if(course1.choice) {System.out.println("æ­å–œ,é€‰è¯¾æˆåŠŸ.");stu.setCoursed("Javaåº”ç”¨å¼€å‘æŠ€æœ¯");
+    			 		{if(course1.choice) {System.out.println("¹§Ï²,Ñ¡¿Î³É¹¦.");stu.setCoursed("JavaÓ¦ÓÃ¿ª·¢¼¼Êõ");
     			 		loopMethod(stu);flag1=false;
     			 		}
     			 		else
-    			 			{System.out.println("æ— å‰©ä½™è¯¾ä½™é‡,é€‰è¯¾å¤±è´¥!");flag1 = false;}}
+    			 			{System.out.println("ÎŞÊ£Óà¿ÎÓàÁ¿,Ñ¡¿ÎÊ§°Ü!");flag1 = false;}}
     			 	break; 
     			 	case "1" :
     			 	{
-    			 		if(course2.choice) {System.out.println("æ­å–œ,é€‰è¯¾æˆåŠŸ.");stu.setCoursed("å¤§å­¦è‹±è¯­");
+    			 		if(course2.choice) {System.out.println("¹§Ï²,Ñ¡¿Î³É¹¦.");stu.setCoursed("´óÑ§Ó¢Óï");
     			 		loopMethod(stu);flag1 = false;
     			 	}
     			 		else
-    			 			{System.out.println("æ— å‰©ä½™è¯¾ä½™é‡,é€‰è¯¾å¤±è´¥!");flag1 = false;}}
+    			 			{System.out.println("ÎŞÊ£Óà¿ÎÓàÁ¿,Ñ¡¿ÎÊ§°Ü!");flag1 = false;}}
     			 	break; 
     			 	case "2" :
     			 	{
-    			 		if(course3.choice) {System.out.println("æ­å–œ,é€‰è¯¾æˆåŠŸ.");stu.setCoursed("ä¸­å›½å“²å­¦å²");
+    			 		if(course3.choice) {System.out.println("¹§Ï²,Ñ¡¿Î³É¹¦.");stu.setCoursed("ÖĞ¹úÕÜÑ§Ê·");
     			 		loopMethod(stu);flag1 = false;
     			 	}
     			 		else
-    			 			{System.out.println("æ— å‰©ä½™è¯¾ä½™é‡,é€‰è¯¾å¤±è´¥!");flag1 = false;}}
+    			 			{System.out.println("ÎŞÊ£Óà¿ÎÓàÁ¿,Ñ¡¿ÎÊ§°Ü!");flag1 = false;}}
     			 	break;
     			 	case "3" :
     			 	{
-    			 		if(course4.choice) {System.out.println("æ­å–œ,é€‰è¯¾æˆåŠŸ.");stu.setCoursed("é‡‘å·¥å®ä¹ ");
+    			 		if(course4.choice) {System.out.println("¹§Ï²,Ñ¡¿Î³É¹¦.");stu.setCoursed("½ğ¹¤ÊµÏ°");
     			 		loopMethod(stu);flag1 = false;
     			 	}
     			 		else
-    			 			{System.out.println("æ— å‰©ä½™è¯¾ä½™é‡,é€‰è¯¾å¤±è´¥!");flag1 = false;}}
+    			 			{System.out.println("ÎŞÊ£Óà¿ÎÓàÁ¿,Ñ¡¿ÎÊ§°Ü!");flag1 = false;}}
     			 	break;
     			 	default : 
-    			 	{System.out.println("ä½ è¾“å…¥äº†ä¸€ä¸ªä¸æ­£ç¡®çš„é€‰è¯¾åºå·!");flag1 = false;}
+    			 	{System.out.println("ÄãÊäÈëÁËÒ»¸ö²»ÕıÈ·µÄÑ¡¿ÎĞòºÅ!");flag1 = false;}
     			 	break;
     			 }
     		 }
     		 scan.close();} 
     	break;
     	default :
-    	{System.out.println("ä½ è¾“å…¥äº†ä¸€ä¸ªä¸æ­£ç¡®çš„é€‰æ‹©åºå·!");flag1 = false;}   //è¾“å…¥é”™è¯¯çš„ç¼–å·åˆ™é€€å‡ºé€‰è¯¾ç³»ç»Ÿ
+    	{System.out.println("ÄãÊäÈëÁËÒ»¸ö²»ÕıÈ·µÄÑ¡ÔñĞòºÅ!");flag1 = false;}   //ÊäÈë´íÎóµÄ±àºÅÔòÍË³öÑ¡¿ÎÏµÍ³
     	break;       
     }}
     choose1.close();
